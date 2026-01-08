@@ -1,345 +1,362 @@
 <style>
-    /* Post container */
-    .mp-post {
-        font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-        line-height: 1.65;
-        color: #111;
-        max-width: 860px;
-        margin: 0 auto;
-        padding: 0 10px;
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+    :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --surface2: #f8f9fa;
+        --text: #202124;
+        --muted: #5f6368;
+        --border: #dadce0;
+        --link: #1a73e8;
+        --linkHover: #174ea6;
+        --shadow: 0 1px 2px rgba(60, 64, 67, .15), 0 2px 6px rgba(60, 64, 67, .10);
+        --radius: 12px;
+        --max: 900px;
     }
 
-    .mp-post h1,
-    .mp-post h2,
-    .mp-post h3 {
+    body {
+        background: var(--bg) !important;
+    }
+
+    .gk-wrap {
+        font-family: Roboto, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+        color: var(--text);
+        max-width: var(--max);
+        margin: 28px auto;
+        padding: 0 14px;
+        line-height: 1.75;
+    }
+
+    .gk-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 20px;
+    }
+
+    .gk-title {
+        margin: 0 0 8px;
+        font-size: 30px;
         line-height: 1.25;
-        margin: 18px 0 10px;
-        letter-spacing: -0.2px;
+        font-weight: 700;
     }
 
-    .mp-post h1 {
-        font-size: 34px;
-    }
-
-    .mp-post h2 {
-        font-size: 24px;
-        margin-top: 26px;
-    }
-
-    .mp-post h3 {
-        font-size: 18px;
-        margin-top: 18px;
-    }
-
-    .mp-muted {
-        color: #555;
+    .gk-meta {
+        margin: 0 0 14px;
+        color: var(--muted);
         font-size: 14px;
-        margin-top: 6px;
     }
 
-    .mp-hr {
+    .gk-hr {
         height: 1px;
-        background: #eee;
         border: 0;
-        margin: 22px 0;
-    }
-
-    /* Images */
-    .mp-figure {
-        margin: 16px 0 22px;
-    }
-
-    .mp-figure img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 14px;
-    }
-
-    .mp-caption {
-        font-size: 13px;
-        color: #666;
-        margin-top: 8px;
-        text-align: center;
-    }
-
-    /* Callouts */
-    .mp-callout {
-        background: #f6f7f9;
-        border: 1px solid #e9eaee;
-        border-left: 6px solid #111;
-        padding: 14px 14px;
-        border-radius: 12px;
+        background: var(--border);
         margin: 18px 0;
     }
 
-    .mp-callout b {
+    .gk-wrap h2 {
+        margin: 22px 0 10px;
+        font-size: 20px;
         font-weight: 700;
     }
 
-    /* Quick cards grid */
-    .mp-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        margin: 14px 0 6px;
-    }
-
-    .mp-card {
-        border: 1px solid #ececec;
-        border-radius: 14px;
-        padding: 14px;
-        background: #fff;
-    }
-
-    .mp-card h3 {
-        margin: 0 0 8px;
+    .gk-wrap h3 {
+        margin: 18px 0 8px;
         font-size: 16px;
-    }
-
-    .mp-card ul {
-        margin: 0;
-        padding-left: 18px;
-    }
-
-    .mp-card li {
-        margin: 6px 0;
-    }
-
-    /* Small “TL;DR” */
-    .mp-tldr {
-        background: #111;
-        color: #fff;
-        border-radius: 14px;
-        padding: 14px 14px;
-        margin: 16px 0;
-    }
-
-    .mp-tldr b {
-        color: #fff;
-    }
-
-    /* Footer */
-    .mp-footer {
-        margin-top: 26px;
-        padding: 16px;
-        border-radius: 14px;
-        border: 1px solid #ececec;
-        background: #fafafa;
-    }
-
-    .mp-footer a {
-        color: #111;
         font-weight: 700;
+    }
+
+    .gk-wrap a {
+        color: var(--link);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .gk-wrap a:hover {
+        color: var(--linkHover);
         text-decoration: underline;
     }
 
-    /* Mobile tweaks */
-    @media (max-width: 640px) {
-        .mp-post h1 {
-            font-size: 28px;
+    .gk-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 14px 0 6px;
+    }
+
+    .gk-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        padding: 0 14px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text) !important;
+        text-decoration: none !important;
+        font-weight: 500;
+    }
+
+    .gk-btn:hover {
+        background: var(--surface2);
+    }
+
+    .gk-btn.primary {
+        background: var(--link);
+        color: #fff !important;
+        border-color: transparent;
+    }
+
+    .gk-btn.primary:hover {
+        background: var(--linkHover);
+    }
+
+    .gk-figure {
+        margin: 14px 0 16px;
+    }
+
+    .gk-figure img {
+        width: 100%;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        display: block;
+    }
+
+    .gk-caption {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .gk-callout {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 14px;
+        margin: 14px 0;
+    }
+
+    .gk-callout.accent {
+        border-left: 4px solid var(--link);
+    }
+
+    .gk-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    .gk-mini {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 14px;
+    }
+
+    .gk-mini ul {
+        margin: 8px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+    }
+
+    .gk-mini li {
+        margin: 6px 0;
+    }
+
+    .gk-footer {
+        margin-top: 18px;
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 14px;
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    @media (max-width:720px) {
+        .gk-title {
+            font-size: 26px;
         }
 
-        .mp-post h2 {
-            font-size: 21px;
-        }
-
-        .mp-grid {
+        .gk-grid {
             grid-template-columns: 1fr;
+        }
+
+        .gk-card {
+            padding: 16px;
         }
     }
 </style>
 
-<div class="mp-post">
+<div class="gk-wrap">
+    <div class="gk-card">
 
-    <h2 style="text-align: left;">AI vs Human: No Cap… Humans Still Win (Here’s Why)</h2>
-    <h3 style="text-align: left;"><span style="font-weight: normal;">By MS PixelPulse&nbsp;- Real talk + practical take
-            • Updated for today’s AI era</span></h3>
+        <h1 class="gk-title">AI vs Human: Humans Still Win (Here’s the Real Reason)</h1>
+        <p class="gk-meta">By <b>MS PixelPulse</b> • Practical take for today’s AI era</p>
 
-    <!--HERO IMAGE (AI vs Human)-->
-    <figure class="mp-figure">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0nAF1yurFzvFOb4Z2ztfuQniPfGTBYlxKgPUlYk_ADTbqUitPzBRypQyZlrzyUcYDo0filzPzFSxdfx5X-3OLj-iqJO3rPI8xhToGEWu4X73DI7ByyrEMjSs2YCtkDkUWDnaH8TWc58TT0cHXwgYlRNFfZPVoeY05XmBXlVK2SxqX7wewo0X3AYHdDp8/s1536/AI-vs-Human.png"
-            rel="noopener" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" target="_blank">
-            <img alt="AI vs Human: humans and AI facing off" height="213" loading="lazy"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0nAF1yurFzvFOb4Z2ztfuQniPfGTBYlxKgPUlYk_ADTbqUitPzBRypQyZlrzyUcYDo0filzPzFSxdfx5X-3OLj-iqJO3rPI8xhToGEWu4X73DI7ByyrEMjSs2YCtkDkUWDnaH8TWc58TT0cHXwgYlRNFfZPVoeY05XmBXlVK2SxqX7wewo0X3AYHdDp8/w320-h213/AI-vs-Human.png"
-                width="320" />
-        </a>
-        <div class="mp-caption">AI is fast. Humans are deep. That’s the whole plot.</div>
-    </figure>
-
-    <p>
-        AI is everywhere right now. It can write, code, design, summarize, and talk like a human.
-        So the question keeps popping up:
-        <b>“Is AI gonna replace us?”</b>
-    </p>
-
-    <div class="mp-callout">
-        <b>Toronto real talk:</b> AI is a tool. Humans are the source.
-        AI can help you move faster, but it can’t replace the “why” behind what you do.
-    </div>
-
-    <div class="mp-tldr">
-        <b>TL;DR:</b> AI wins on speed + scale. Humans win on meaning + judgment + ethics + relationships.
-        The real winner is the human who uses AI smart (and doesn’t let it make them average).
-    </div>
-
-    <hr class="mp-hr" />
-
-    <h3 style="text-align: left;">1) What AI can do better than humans (no hate, just facts)</h3>
-    <div class="mp-grid">
-        <div class="mp-card">
-            <h3>⚡ Speed at scale</h3>
-            <ul>
-                <li>50 ideas in seconds</li>
-                <li>Instant drafts, rewrites, summaries</li>
-                <li>Works 24/7 with no burnout</li>
-            </ul>
+        <div class="gk-actions">
+            <a class="gk-btn primary" href="/search">Browse posts</a>
+            <a class="gk-btn" href="/p/contact.html">Contact</a>
+            <a class="gk-btn" href="https://www.mahakpatel.com/home#contact" target="_blank"
+                rel="noopener">Portfolio</a>
         </div>
-        <div class="mp-card">
-            <h3>📊 Pattern spotting</h3>
-            <ul>
-                <li>Finds trends across huge data</li>
-                <li>Organizes messy info fast</li>
-                <li>Helps you see options you missed</li>
-            </ul>
-        </div>
-    </div>
 
-    <p>
-        If your work is heavy on repetition, formatting, and first drafts, AI is basically a cheat code.
-        But… speed isn’t the same as <b>truth</b> or <b>taste</b>.
-    </p>
+        <figure class="gk-figure">
+            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0nAF1yurFzvFOb4Z2ztfuQniPfGTBYlxKgPUlYk_ADTbqUitPzBRypQyZlrzyUcYDo0filzPzFSxdfx5X-3OLj-iqJO3rPI8xhToGEWu4X73DI7ByyrEMjSs2YCtkDkUWDnaH8TWc58TT0cHXwgYlRNFfZPVoeY05XmBXlVK2SxqX7wewo0X3AYHdDp8/s1536/AI-vs-Human.png"
+                target="_blank" rel="noopener">
+                <img alt="AI vs Human: humans and AI facing off" loading="lazy"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0nAF1yurFzvFOb4Z2ztfuQniPfGTBYlxKgPUlYk_ADTbqUitPzBRypQyZlrzyUcYDo0filzPzFSxdfx5X-3OLj-iqJO3rPI8xhToGEWu4X73DI7ByyrEMjSs2YCtkDkUWDnaH8TWc58TT0cHXwgYlRNFfZPVoeY05XmBXlVK2SxqX7wewo0X3AYHdDp8/s1536/AI-vs-Human.png">
+            </a>
+            <div class="gk-caption">AI is fast. Humans bring judgment, context, and responsibility.</div>
+        </figure>
 
-    <!--TORONTO VIBE IMAGE (AI vs Boy)-->
-    <figure class="mp-figure">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRW3sfIRlfiwHn_58sthn51FtNHTwpFj_TYpHd_kJRbWc8eJUNr92Rw6E2nOeN-rfFLOWpupONtXXp4OJl-_VNfPDtqJagxKOYmMLX1D1glzllI4cSmVAYQgWOqAGmMPfDrHpi6Vq4RdsfbiiOGEjThxbgZc7casCGRnxdzLgN2XkdZRGonk8H7NUPJcA/s1536/AI-VS-BOY.png"
-            rel="noopener" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" target="_blank">
-            <img alt="Human and AI facing off in a respectful rivalry" height="213" loading="lazy"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRW3sfIRlfiwHn_58sthn51FtNHTwpFj_TYpHd_kJRbWc8eJUNr92Rw6E2nOeN-rfFLOWpupONtXXp4OJl-_VNfPDtqJagxKOYmMLX1D1glzllI4cSmVAYQgWOqAGmMPfDrHpi6Vq4RdsfbiiOGEjThxbgZc7casCGRnxdzLgN2XkdZRGonk8H7NUPJcA/w320-h213/AI-VS-BOY.png"
-                width="320" />
-        </a>
-        <div class="mp-caption">Respectful rivalry: AI helps… but humans still drive.</div>
-    </figure>
-
-    <hr class="mp-hr" />
-
-    <h2>2) What humans can do that AI can’t (the “human advantage”)</h2>
-
-    <div class="mp-grid">
-        <div class="mp-card">
-            <h3>🧠 Real understanding</h3>
-            <ul>
-                <li>Humans live consequences</li>
-                <li>We learn through failure + risk</li>
-                <li>We understand context naturally</li>
-            </ul>
-        </div>
-        <div class="mp-card">
-            <h3>❤️ Emotion + connection</h3>
-            <ul>
-                <li>Trust and relationships</li>
-                <li>Empathy and leadership</li>
-                <li>Reading the room (AI can’t)</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="mp-grid">
-        <div class="mp-card">
-            <h3>⚖️ Ethics + responsibility</h3>
-            <ul>
-                <li>AI doesn’t “own” outcomes</li>
-                <li>Humans decide what’s right</li>
-                <li>Accountability is human</li>
-            </ul>
-        </div>
-        <div class="mp-card">
-            <h3>🎯 Taste + judgment</h3>
-            <ul>
-                <li>“This is quality” vs “this is mid”</li>
-                <li>Choosing what matters most</li>
-                <li>Knowing when to say “no”</li>
-            </ul>
-        </div>
-    </div>
-
-    <p>
-        AI can generate a thousand answers. Humans choose the one that’s actually correct, safe, and meaningful.
-        That’s not a small thing — that’s the whole game.
-    </p>
-
-    <div class="mp-callout">
-        <b>Key idea:</b> AI can produce content.
-        Humans produce <b>purpose</b>. Purpose is the rarest skill in any era.
-    </div>
-
-    <hr class="mp-hr" />
-
-    <h2>3) The funny part (and the real risk): AI can be confident and wrong 😭</h2>
-    <p>
-        AI is amazing… but sometimes it will deliver a whole presentation with the confidence of someone who didn’t read
-        the assignment.
-        You’ll get something that looks “smart” but isn’t actually right.
-        That’s why humans must stay in charge.
-    </p>
-
-    <!--FUNNY CHAOTIC CHART IMAGE-->
-    <figure class="mp-figure">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiK40eocnDC42tfo34fRHkmVlLw0FbEFFrlQX7w4dABaJmLELp5Dgmn0_-nZnA9F7qguUA2bJQrnMtl-PgwshPqJzDGR3CA5c5ymAmE_SKQ2hRksjDYuSzfUMDkAX0CnXS56-rNkQXLpBuONUFBqj8ynWi6fAmNS2uigpokcaGXxsrm_GUJchR58NNFf4Q/s1536/AI-EXPLANATION.png"
-            rel="noopener" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" target="_blank">
-            <img alt="Robot presenting messy chaotic chart while human smiles and facepalms" height="213" loading="lazy"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiK40eocnDC42tfo34fRHkmVlLw0FbEFFrlQX7w4dABaJmLELp5Dgmn0_-nZnA9F7qguUA2bJQrnMtl-PgwshPqJzDGR3CA5c5ymAmE_SKQ2hRksjDYuSzfUMDkAX0CnXS56-rNkQXLpBuONUFBqj8ynWi6fAmNS2uigpokcaGXxsrm_GUJchR58NNFf4Q/w320-h213/AI-EXPLANATION.png"
-                width="320" />
-        </a>
-        <div class="mp-caption">AI: “Trust me.” Human: “Bro… what is this?”</div>
-    </figure>
-
-    <hr class="mp-hr" />
-
-    <h3 style="text-align: left;">4) So… who wins? (The real conclusion)</h3>
-    <p>
-        Here’s the plot twist: It’s not “AI vs Human.”
-        It’s <b>Human-with-AI vs Human-without-AI</b>.
-    </p>
-
-    <div class="mp-callout">
-        <b>The winner is the human who:</b>
-        <ul style="margin: 10px 0px 0px; padding-left: 18px;">
-            <li>uses AI for speed (drafts, options, summaries)</li>
-            <li>keeps humans for judgment (truth, ethics, taste)</li>
-            <li>checks facts and adds real context</li>
-            <li>creates meaning, not just output</li>
-        </ul>
-    </div>
-
-    <h3>My simple rule</h3>
-    <div class="mp-tldr">
-        <b>AI is your assistant.</b> You are the decision-maker.
-    </div>
-
-    <h2>5) Quick challenge (so this post doesn’t end here)</h2>
-    <p>
-        If you want to stay ahead, do this once:
-        Take a task you do weekly and ask:
-        <b>“What part is repetitive (AI can help) and what part needs judgment (human only)?”</b>
-    </p>
-
-    <p>
-        That’s how you win without losing your originality.
-        Not by competing with AI on speed — but by owning what AI can’t do: <b>meaning</b>.
-    </p>
-
-    <div class="mp-footer">
-        <p style="margin: 0px 0px 10px;">
-            Want more content like this? I’ll be posting practical AI + human advantage breakdowns.
+        <p>
+            AI can write, code, design, summarize, and answer questions instantly. So it’s normal to ask:
+            <b>Will AI replace humans?</b>
         </p>
-        <p style="margin: 0px;">
-            Check my portfolio: <a href="https://mahakpatel.com" rel="noopener" target="_blank">mahakpatel.com</a>
+
+        <div class="gk-callout accent">
+            <b>Short answer:</b> AI will replace tasks — not people. The people who learn to use AI well will move
+            faster,
+            produce better work, and make smarter decisions.
+        </div>
+
+        <div class="gk-hr"></div>
+
+        <h2>1) Where AI clearly wins</h2>
+        <div class="gk-grid">
+            <div class="gk-mini">
+                <h3>Speed and volume</h3>
+                <ul>
+                    <li>Fast drafts, rewrites, summaries</li>
+                    <li>Many variations in seconds</li>
+                    <li>Works anytime without fatigue</li>
+                </ul>
+            </div>
+            <div class="gk-mini">
+                <h3>Pattern support</h3>
+                <ul>
+                    <li>Organizes messy information</li>
+                    <li>Finds trends across lots of data</li>
+                    <li>Helps brainstorm options quickly</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>
+            If your work is repetitive or “first draft heavy,” AI is a real advantage.
+            But output isn’t the same as <b>truth</b>, and speed isn’t the same as <b>good judgment</b>.
         </p>
+
+        <figure class="gk-figure">
+            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRW3sfIRlfiwHn_58sthn51FtNHTwpFj_TYpHd_kJRbWc8eJUNr92Rw6E2nOeN-rfFLOWpupONtXXp4OJl-_VNfPDtqJagxKOYmMLX1D1glzllI4cSmVAYQgWOqAGmMPfDrHpi6Vq4RdsfbiiOGEjThxbgZc7casCGRnxdzLgN2XkdZRGonk8H7NUPJcA/s1536/AI-VS-BOY.png"
+                target="_blank" rel="noopener">
+                <img alt="Human and AI facing off in a respectful rivalry" loading="lazy"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRW3sfIRlfiwHn_58sthn51FtNHTwpFj_TYpHd_kJRbWc8eJUNr92Rw6E2nOeN-rfFLOWpupONtXXp4OJl-_VNfPDtqJagxKOYmMLX1D1glzllI4cSmVAYQgWOqAGmMPfDrHpi6Vq4RdsfbiiOGEjThxbgZc7casCGRnxdzLgN2XkdZRGonk8H7NUPJcA/s1536/AI-VS-BOY.png">
+            </a>
+            <div class="gk-caption">The best results come from collaboration: AI assists, humans decide.</div>
+        </figure>
+
+        <div class="gk-hr"></div>
+
+        <h2>2) Where humans still win (and why it matters)</h2>
+        <div class="gk-grid">
+            <div class="gk-mini">
+                <h3>Context and consequences</h3>
+                <ul>
+                    <li>Humans understand real-world impact</li>
+                    <li>We learn from risk and lived experience</li>
+                    <li>We connect meaning to decisions</li>
+                </ul>
+            </div>
+            <div class="gk-mini">
+                <h3>Trust and relationships</h3>
+                <ul>
+                    <li>Leadership and empathy</li>
+                    <li>Reading the room</li>
+                    <li>Building credibility over time</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="gk-grid">
+            <div class="gk-mini">
+                <h3>Ethics and responsibility</h3>
+                <ul>
+                    <li>AI doesn’t take accountability</li>
+                    <li>Humans choose what’s acceptable</li>
+                    <li>Humans own the outcome</li>
+                </ul>
+            </div>
+            <div class="gk-mini">
+                <h3>Taste and judgment</h3>
+                <ul>
+                    <li>Knowing what matters (and what doesn’t)</li>
+                    <li>Choosing quality over “looks fine”</li>
+                    <li>Knowing when to stop or say “no”</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="gk-callout accent">
+            <b>Key idea:</b> AI can generate options. Humans choose what is correct, safe, and meaningful.
+            That decision-making is the real skill.
+        </div>
+
+        <div class="gk-hr"></div>
+
+        <h2>3) The real risk: AI can be confident and wrong</h2>
+        <p>
+            Sometimes AI delivers answers that look professional but contain mistakes, missing context, or made-up
+            details.
+            That’s why reviewing and fact-checking still matters — especially for anything important.
+        </p>
+
+        <figure class="gk-figure">
+            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiK40eocnDC42tfo34fRHkmVlLw0FbEFFrlQX7w4dABaJmLELp5Dgmn0_-nZnA9F7qguUA2bJQrnMtl-PgwshPqJzDGR3CA5c5ymAmE_SKQ2hRksjDYuSzfUMDkAX0CnXS56-rNkQXLpBuONUFBqj8ynWi6fAmNS2uigpokcaGXxsrm_GUJchR58NNFf4Q/s1536/AI-EXPLANATION.png"
+                target="_blank" rel="noopener">
+                <img alt="Robot presenting messy chart while human reacts" loading="lazy"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiK40eocnDC42tfo34fRHkmVlLw0FbEFFrlQX7w4dABaJmLELp5Dgmn0_-nZnA9F7qguUA2bJQrnMtl-PgwshPqJzDGR3CA5c5ymAmE_SKQ2hRksjDYuSzfUMDkAX0CnXS56-rNkQXLpBuONUFBqj8ynWi6fAmNS2uigpokcaGXxsrm_GUJchR58NNFf4Q/s1536/AI-EXPLANATION.png">
+            </a>
+            <div class="gk-caption">AI can sound confident even when it’s missing the full picture.</div>
+        </figure>
+
+        <div class="gk-hr"></div>
+
+        <h2>4) So who wins?</h2>
+        <p>
+            The real competition is not “AI vs Human.”
+            It’s <b>Human-with-AI</b> vs <b>Human-without-AI</b>.
+        </p>
+
+        <div class="gk-callout">
+            <b>The winning approach:</b>
+            <ul style="margin:8px 0 0; padding-left:18px; color:var(--muted);">
+                <li>Use AI for drafts, options, summaries</li>
+                <li>Use human judgment for truth, ethics, and final decisions</li>
+                <li>Verify facts, add context, and keep quality high</li>
+            </ul>
+        </div>
+
+        <h2>5) A quick challenge (do this once)</h2>
+        <p>
+            Pick one task you do every week and split it into two parts:
+            <b>What can be automated</b> (AI helps) and <b>what needs judgment</b> (human-only).
+            That’s how you improve without losing originality.
+        </p>
+
+        <div class="gk-footer">
+            Want more posts like this? Follow MS PixelPulse for practical AI + tech breakdowns.
+            <br><br>
+            Contact: <a href="/p/contact.html">/p/contact.html</a> •
+            Portfolio: <a href="https://www.mahakpatel.com/home#contact" target="_blank"
+                rel="noopener">mahakpatel.com</a>
+        </div>
+
     </div>
-
-    <p class="mp-muted" style="margin-top: 14px;">
-        If you enjoyed this, share it with one friend who thinks “AI is taking over.” 😄
-    </p>
-
 </div>

@@ -1,0 +1,341 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+  /* =========================================================
+     Google Clean Kit — Blogger (AUTO Light/Dark)
+     - Minimal colors
+     - Material-like spacing + borders
+     - Device theme controls light/dark
+     ========================================================= */
+
+  :root {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface2: #f8f9fa;
+    --text: #202124;
+    --muted: #5f6368;
+    --border: #dadce0;
+    --link: #1a73e8;
+    --linkHover: #174ea6;
+    --shadow: 0 1px 2px rgba(60, 64, 67, .15), 0 2px 6px rgba(60, 64, 67, .10);
+    --radius: 12px;
+    --max: 900px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #202124;
+      --surface: #292a2d;
+      --surface2: #1f1f1f;
+      --text: #e8eaed;
+      --muted: #9aa0a6;
+      --border: #3c4043;
+      --link: #8ab4f8;
+      --linkHover: #a8c7ff;
+      --shadow: none;
+    }
+  }
+
+  /* Keep Blogger theme from fighting the post */
+  body {
+    background: var(--bg) !important;
+  }
+
+  .gk-wrap {
+    font-family: Roboto, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    max-width: var(--max);
+    margin: 28px auto;
+    padding: 0 14px;
+    line-height: 1.75;
+    letter-spacing: .1px;
+  }
+
+  .gk-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+  }
+
+  .gk-title {
+    margin: 0 0 8px;
+    font-size: 30px;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  .gk-meta {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .gk-hr {
+    height: 1px;
+    border: 0;
+    background: var(--border);
+    margin: 18px 0;
+  }
+
+  .gk-wrap h2 {
+    margin: 22px 0 10px;
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  .gk-wrap h3 {
+    margin: 18px 0 8px;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+
+  .gk-wrap p {
+    margin: 10px 0;
+  }
+
+  .gk-wrap a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .gk-wrap a:hover {
+    color: var(--linkHover);
+    text-decoration: underline;
+  }
+
+  /* Hero image */
+  .gk-figure {
+    margin: 14px 0 16px;
+  }
+
+  .gk-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    display: block;
+  }
+
+  .gk-caption {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* Callouts (minimal) */
+  .gk-callout {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    margin: 14px 0;
+  }
+
+  .gk-callout b {
+    font-weight: 700;
+  }
+
+  .gk-callout.accent {
+    border-left: 4px solid var(--link);
+  }
+
+  /* Grid cards */
+  .gk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 12px 0;
+  }
+
+  .gk-mini {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+  }
+
+  .gk-mini ul {
+    margin: 8px 0 0;
+    padding-left: 18px;
+    color: var(--muted);
+  }
+
+  .gk-mini li {
+    margin: 6px 0;
+  }
+
+  /* TOC */
+  .gk-toc {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    margin: 14px 0;
+  }
+
+  .gk-toc-title {
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+
+  .gk-toc ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .gk-toc li {
+    margin: 6px 0;
+  }
+
+  /* Buttons */
+  .gk-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 14px 0 6px;
+  }
+
+  .gk-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text) !important;
+    text-decoration: none !important;
+    font-weight: 500;
+  }
+
+  .gk-btn:hover {
+    background: var(--surface2);
+    text-decoration: none !important;
+  }
+
+  .gk-btn.primary {
+    background: var(--link);
+    color: #fff !important;
+    border-color: transparent;
+  }
+
+  .gk-btn.primary:hover {
+    background: var(--linkHover);
+  }
+
+  /* Footer */
+  .gk-footer {
+    margin-top: 18px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  /* Subtle animation (safe + minimal) */
+  @media (prefers-reduced-motion: no-preference) {
+    .gk-fade {
+      animation: gkFade .35s ease-out both;
+    }
+
+    @keyframes gkFade {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    .gk-title {
+      font-size: 26px;
+    }
+
+    .gk-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gk-card {
+      padding: 16px;
+    }
+  }
+</style>
+
+<script>
+  /* Optional JS: Build TOC + Copy Link (remove if Blogger blocks scripts for your theme) */
+  (function () {
+    var root = document.querySelector(".gk-wrap");
+    if (!root) return;
+
+    // TOC
+    var toc = root.querySelector("[data-gk='toc']");
+    if (toc) {
+      var hs = root.querySelectorAll("h2, h3");
+      var ul = document.createElement("ul");
+      hs.forEach(function (h, i) {
+        if (!h.id) {
+          h.id = "sec-" + i + "-" + (h.textContent || "")
+            .trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 60);
+        }
+        var li = document.createElement("li");
+        if (h.tagName === "H3") li.style.marginLeft = "10px";
+        var a = document.createElement("a");
+        a.href = "#" + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      toc.innerHTML = '<div class="gk-toc-title">On this page</div>';
+      toc.appendChild(ul);
+    }
+
+    // Copy link
+    var copy = root.querySelector("[data-gk='copy']");
+    if (copy) {
+      copy.addEventListener("click", async function (e) {
+        e.preventDefault();
+        try {
+          await navigator.clipboard.writeText(location.href);
+          copy.textContent = "Link copied";
+          setTimeout(function () { copy.textContent = "Copy link"; }, 1400);
+        } catch (err) {
+          copy.textContent = "Copy failed";
+          setTimeout(function () { copy.textContent = "Copy link"; }, 1400);
+        }
+      });
+    }
+  })();
+</script>
+
+<!-- CONTENT GOES INSIDE THIS -->
+<div class="gk-wrap gk-fade">
+  <div class="gk-card">
+    <!-- Replace this with your page/post content -->
+    <h1 class="gk-title">Your Title</h1>
+    <p class="gk-meta">By MS PixelPulse • Updated today</p>
+    <div class="gk-actions">
+      <a class="gk-btn primary" href="/">Home</a>
+      <a class="gk-btn" href="/search">Search</a>
+      <a class="gk-btn" href="#" data-gk="copy">Copy link</a>
+      <a class="gk-btn" href="/p/contact.html">Contact</a>
+    </div>
+    <div class="gk-toc" data-gk="toc"></div>
+
+    <p>Paste your content here…</p>
+  </div>
+</div>
