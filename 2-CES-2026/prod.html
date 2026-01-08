@@ -1,0 +1,399 @@
+<style>
+    /* =========================================================
+     Clean Blogger Post Kit — LIGHT THEME ONLY
+     Goal: Google-like readability, minimal colors, clean spacing
+     Font: Roboto (Google standard vibe)
+     ========================================================= */
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+    :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --text: #202124;
+        --muted: #5f6368;
+        --border: #e0e0e0;
+        --link: #1a73e8;
+        --linkHover: #1557b0;
+        --chip: #f1f3f4;
+        --note: #f8f9fa;
+        --shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 6px 24px rgba(0, 0, 0, .06);
+        --radius: 14px;
+        --max: 880px;
+    }
+
+    .mp-post {
+        font-family: Roboto, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+        color: var(--text);
+        line-height: 1.85;
+        background: var(--bg);
+    }
+
+    .mp-shell {
+        max-width: var(--max);
+        margin: 28px auto;
+        padding: 0 16px;
+    }
+
+    .mp-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px;
+    }
+
+    /* Title */
+    .mp-title {
+        font-size: 34px;
+        line-height: 1.25;
+        letter-spacing: -0.2px;
+        margin: 0 0 8px;
+        font-weight: 700;
+    }
+
+    .mp-subtitle {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    /* Chips */
+    .mp-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 10px 0 18px;
+    }
+
+    .mp-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: var(--chip);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 500;
+        border: 1px solid var(--border);
+    }
+
+    /* Links */
+    .mp-post a {
+        color: var(--link);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .mp-post a:hover {
+        color: var(--linkHover);
+        text-decoration: underline;
+    }
+
+    /* Sections */
+    .mp-h2 {
+        font-size: 22px;
+        line-height: 1.35;
+        margin: 22px 0 10px;
+        font-weight: 700;
+        letter-spacing: -0.1px;
+    }
+
+    .mp-h3 {
+        font-size: 16px;
+        margin: 14px 0 8px;
+        font-weight: 700;
+    }
+
+    .mp-hr {
+        height: 1px;
+        border: 0;
+        background: var(--border);
+        margin: 20px 0;
+    }
+
+    /* Images */
+    .mp-figure {
+        margin: 16px 0 18px;
+    }
+
+    .mp-figure img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--note);
+    }
+
+    .mp-cap {
+        margin-top: 8px;
+        font-size: 12.5px;
+        color: var(--muted);
+        text-align: center;
+    }
+
+    /* Note / Callout */
+    .mp-note {
+        background: var(--note);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--link);
+        border-radius: 12px;
+        padding: 14px;
+        margin: 16px 0;
+    }
+
+    .mp-note b {
+        font-weight: 700;
+    }
+
+    /* TL;DR */
+    .mp-tldr {
+        background: var(--note);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px;
+        margin: 16px 0;
+    }
+
+    /* Grid */
+    .mp-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    .mp-box {
+        background: var(--note);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px;
+    }
+
+    .mp-box ul {
+        margin: 8px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+    }
+
+    .mp-box li {
+        margin: 6px 0;
+    }
+
+    /* Footer card */
+    .mp-footer {
+        margin-top: 22px;
+        padding: 16px;
+        background: var(--note);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+    }
+
+    .mp-footer p {
+        margin: 0 0 10px;
+        color: var(--muted);
+    }
+
+    /* Buttons */
+    .mp-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .mp-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        padding: 0 14px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: #fff;
+        color: var(--text) !important;
+        font-weight: 600;
+        text-decoration: none !important;
+    }
+
+    .mp-btn.primary {
+        background: var(--link);
+        border-color: transparent;
+        color: #fff !important;
+    }
+
+    .mp-btn.primary:hover {
+        background: var(--linkHover);
+    }
+
+    /* Mobile */
+    @media (max-width:680px) {
+        .mp-title {
+            font-size: 28px;
+        }
+
+        .mp-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .mp-card {
+            padding: 18px;
+        }
+    }
+</style>
+
+<div class="mp-post">
+    <div class="mp-shell">
+        <div class="mp-card">
+
+            <h1 class="mp-title">CES 2026 + AI + the Economy: What Americans (and Canadians) Are Talking About This Week
+            </h1>
+            <p class="mp-subtitle">By <b>MS PixelPulse</b> • 6–8 min read • Practical + easy explanations</p>
+
+            <div class="mp-chips">
+                <span class="mp-chip">🧠 AI trends</span>
+                <span class="mp-chip">🚗 Self-driving</span>
+                <span class="mp-chip">📉 Rates & money</span>
+                <span class="mp-chip">🇺🇸🇨🇦 US + Canada</span>
+            </div>
+
+            <!-- HERO IMAGE (replace src later with your generated image) -->
+            <figure class="mp-figure">
+                <img src="https://via.placeholder.com/1400x800.png?text=Hero+Image+(Replace+me)"
+                    alt="Clean hero image representing AI, CES gadgets, and everyday people" loading="lazy" />
+                <div class="mp-cap">A simple weekly snapshot of what’s trending — and what it means for you.</div>
+            </figure>
+
+            <div class="mp-tldr">
+                <b>TL;DR:</b> CES 2026 is packed with “AI everywhere,” especially in cars and devices. Autonomous
+                driving + AI
+                are getting the spotlight, while money conversations (interest rates, inflation, spending) keep trending
+                in both
+                the US and Canada.
+            </div>
+
+            <p>
+                If you’re trying to understand what’s “hot” right now without scrolling for hours, this post is for you.
+                I’ll keep it clean: what’s trending, why it matters, and what you can actually do with the info.
+            </p>
+
+            <hr class="mp-hr" />
+
+            <h2 class="mp-h2">1) CES 2026: AI is no longer a feature — it’s the default</h2>
+            <p>
+                CES is the biggest tech show of the year, and the conversation is loud:
+                robots, smarter phones, and lots of “AI in everything.”
+                This matters because it predicts what big companies will ship next — and what people will talk about
+                online for months.
+            </p>
+
+            <figure class="mp-figure">
+                <img src="https://via.placeholder.com/1400x800.png?text=CES+Image+(Replace+me)"
+                    alt="Minimal editorial illustration of a tech expo with AI icons and devices" loading="lazy" />
+                <div class="mp-cap">CES week = a preview of what tech companies want you to buy next.</div>
+            </figure>
+
+            <div class="mp-note">
+                <b>Real-life takeaway:</b> Expect more “AI assistants” inside normal products (phones, home devices,
+                apps).
+                The winner isn’t the fanciest AI — it’s the one that saves time without being annoying.
+            </div>
+
+            <h2 class="mp-h2">2) Self-driving + AI are getting the main stage</h2>
+            <p>
+                One of the biggest storylines right now is autonomous driving tech + AI.
+                People care because it affects safety, trust, rules, and the future of transportation.
+                It’s also a reminder that “new tech” only wins when it works in real life (not just demos).
+            </p>
+
+            <div class="mp-grid">
+                <div class="mp-box">
+                    <div class="mp-h3">What people are excited about</div>
+                    <ul>
+                        <li>Smarter driver assistance</li>
+                        <li>Less stress in traffic</li>
+                        <li>New car tech “wow factor”</li>
+                    </ul>
+                </div>
+                <div class="mp-box">
+                    <div class="mp-h3">What people worry about</div>
+                    <ul>
+                        <li>Safety incidents & trust</li>
+                        <li>Rules and approvals</li>
+                        <li>Cost and real-world performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="mp-hr" />
+
+            <h2 class="mp-h2">3) Money talk is still trending: rates, spending, and “what happens next?”</h2>
+            <p>
+                In the US, rate expectations trend because they affect everyday life: credit cards, mortgages, car
+                loans, and hiring.
+                In Canada, similar conversations show up because rates shape housing and monthly costs.
+            </p>
+
+            <figure class="mp-figure">
+                <img src="https://via.placeholder.com/1400x800.png?text=Rates+%26+Money+Image+(Replace+me)"
+                    alt="Minimal illustration representing personal finance and interest rates" loading="lazy" />
+                <div class="mp-cap">When rates move, real life moves — even if you don’t follow finance news.</div>
+            </figure>
+
+            <div class="mp-note">
+                <b>Simple action:</b> If you have variable-rate debt, track rates monthly and keep a small “buffer
+                plan.”
+                You don’t need to be a finance expert — just prepared.
+            </div>
+
+            <hr class="mp-hr" />
+
+            <h2 class="mp-h2">4) Canada-specific trend: EV incentives change, and buyers notice</h2>
+            <p>
+                EV incentives always trend because they change buying decisions. Even small policy changes can affect
+                timing, resale value, and demand.
+            </p>
+
+            <div class="mp-note">
+                <b>Why this matters:</b> Incentives don’t just change the price — they change the “best time to buy.”
+                Before committing to an EV, check current programs and eligibility in your province.
+            </div>
+
+            <hr class="mp-hr" />
+
+            <h2 class="mp-h2">5) The real “AI vs Human” conclusion</h2>
+            <p>
+                This week proves the same lesson again: AI is being packed into everything,
+                but humans still decide what’s useful, safe, and worth paying for.
+            </p>
+
+            <div class="mp-tldr">
+                <b>My rule:</b> Use AI for speed (drafts, options, summaries). Use humans for judgment (truth, ethics,
+                taste).
+            </div>
+
+            <div class="mp-footer">
+                <p><b>Want to connect?</b> Here are my links:</p>
+                <div class="mp-actions">
+                    <a class="mp-btn primary" href="https://www.mahakpatel.com/home#contact" target="_blank"
+                        rel="noopener">Portfolio Contact</a>
+                    <a class="mp-btn" href="https://github.com/Oyemahak" target="_blank" rel="noopener">GitHub</a>
+                    <a class="mp-btn" href="https://www.linkedin.com/in/mahak-patel-167640150/" target="_blank"
+                        rel="noopener">LinkedIn</a>
+                    <a class="mp-btn" href="https://www.instagram.com/mahak._patel/" target="_blank"
+                        rel="noopener">Instagram</a>
+                    <a class="mp-btn" href="https://wa.me/3658830338" target="_blank" rel="noopener">WhatsApp</a>
+                </div>
+
+                <p style="margin-top:12px;">
+                    Want the next post to be about <b>AI tools</b>, <b>tech jobs</b>, <b>best gadgets</b>, or <b>scams &
+                        safety</b>?
+                    Comment your pick.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
